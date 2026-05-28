@@ -1,3 +1,13 @@
+#####HARSH REQUIRMENTS
+networkx==3.2.1
+numpy==1.26.4
+fastapi==0.111.0
+uvicorn==0.30.1
+pydantic==2.7.1
+python-dotenv==1.0.1
+kafka-python-ng==2.2.3
+neo4j==5.20.0
+#SOUMENS REQUIRMENTS
 annotated-doc==0.0.4
 annotated-types==0.7.0
 anyio==4.13.0
@@ -21,3 +31,4 @@ starlette==1.0.0
 typing-extensions==4.15.0
 typing-inspection==0.4.2
 uvicorn==0.47.0
+
