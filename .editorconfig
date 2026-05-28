@@ -1,0 +1,61 @@
+# EditorConfig — https://editorconfig.org
+# Makes every editor (VS Code, Vim, IntelliJ, …) behave consistently.
+# "root = true" means: stop looking for .editorconfig files above this dir.
+root = true
+
+# ── Universal defaults ─────────────────────────────────────────────────────
+[*]
+charset               = utf-8
+end_of_line           = lf
+insert_final_newline  = true
+trim_trailing_whitespace = true
+indent_style          = space
+indent_size           = 2
+
+# ── Python (app/api) ──────────────────────────────────────────────────────
+# PEP 8 + ruff default: 4-space indent, 88-char line limit
+[*.py]
+indent_size    = 4
+max_line_length = 88
+
+# ── TypeScript / JavaScript (app/web) ─────────────────────────────────────
+# Prettier default: 2-space indent, 100-char line limit
+[*.{ts,tsx,js,jsx,mjs,cjs}]
+indent_size    = 2
+max_line_length = 100
+
+# ── Styles ────────────────────────────────────────────────────────────────
+[*.{css,postcss,scss}]
+indent_size    = 2
+max_line_length = 100
+
+# ── Data & config formats ─────────────────────────────────────────────────
+[*.{json,jsonc}]
+indent_size = 2
+
+[*.{yaml,yml}]
+indent_size = 2
+
+[*.toml]
+indent_size = 4
+
+# ── Shell scripts ─────────────────────────────────────────────────────────
+[*.sh]
+indent_size = 2
+end_of_line = lf
+
+# ── Markdown ──────────────────────────────────────────────────────────────
+# Trailing spaces are significant in Markdown (force line-break),
+# so we leave them alone.
+[*.md]
+trim_trailing_whitespace = false
+max_line_length          = off
+
+# ── Lock files & generated files — leave completely untouched ─────────────
+[{pnpm-lock.yaml,uv.lock,package-lock.json,*.lock}]
+insert_final_newline     = false
+trim_trailing_whitespace = false
+
+[next-env.d.ts]
+insert_final_newline     = false
+trim_trailing_whitespace = false

@@ -1,0 +1,69 @@
+# .pre-commit-config.yaml
+# Run `uv run pre-commit install` to install the git hooks.
+# Run `uv run pre-commit run --all-files` to run all hooks manually.
+
+default_language_version:
+  python: python3.12
+
+repos:
+  # ── General hygiene ────────────────────────────────────────────────────────
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=1000"]
+      - id: mixed-line-ending
+
+  # ── Python · app/api (ruff lint + format) ─────────────────────────────────
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.13
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+        files: ^app/api/
+      - id: ruff-format
+        files: ^app/api/
+
+  # ── Python · app/api (pyright type-check) ─────────────────────────────────
+  - repo: local
+    hooks:
+      - id: pyright
+        name: pyright (app/api)
+        entry: uv run pyright
+        language: system
+        files: ^app/api/.*\.py$
+        pass_filenames: false
+        types: [python]
+
+  # ── Next.js · app/web ─────────────────────────────────────────────────────
+  - repo: local
+    hooks:
+      - id: web-prettier
+        name: prettier (app/web)
+        entry: bash -c 'cd app/web && pnpm exec prettier --write .' # auto-fix
+        language: system
+        files: ^app/web/.*\.(ts|tsx|js|jsx|mjs|json|css|md)$
+        pass_filenames: false
+        exclude: ^app/web/(node_modules|\.next|pnpm-lock\.yaml)
+
+      - id: web-eslint
+        name: eslint (app/web)
+        entry: bash -c 'cd app/web && pnpm lint'
+        language: system
+        files: ^app/web/.*\.(ts|tsx|js|jsx|mjs)$
+        pass_filenames: false
+        exclude: ^app/web/(node_modules|\.next)/
+
+      - id: web-tsc
+        name: tsc (app/web)
+        entry: bash -c 'cd app/web && pnpm type-check'
+        language: system
+        files: ^app/web/.*\.(ts|tsx)$
+        pass_filenames: false
+        exclude: ^app/web/(node_modules|\.next)/

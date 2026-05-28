@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import asyncio
 import uuid
 from contextlib import asynccontextmanager
@@ -339,3 +340,11 @@ async def getResilienceReport(
     propagated_scores = propagation_result.get("propagated_scores", {})
     report = buildResilienceReport(vendor, severity, propagated_scores, graph)
     return report
+=======
+def main():
+    print("Hello from idea!")
+
+
+if __name__ == "__main__":
+    main()
+>>>>>>> b4a383e20988cc6218952ddbfc2c01d7817f233c
