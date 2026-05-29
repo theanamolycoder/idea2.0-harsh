@@ -1,25 +1,25 @@
 import networkx as nx
 from typing import Dict, List
 from collections import deque
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getEdgeWeight,
     getNodeCriticality,
     serializeGraph,
 )
-from propagation.propagation_engine import (
+from app.api.propagation.propagation_engine import (
     mapScoreToSeverity,
     mapSeverityToScore,
     calculateNodeInfectionProbability,
 )
-from mitigation.mitigation_engine import (
+from app.api.mitigation.mitigation_engine import (
     MITIGATION_STRATEGIES,
     selectMitigationsForSeverity,
     calculateMitigationEffectiveness,
     applyMitigationSimulation,
 )
-from propagation.blast_radius_engine import calculateBlastRadius, compareBlastRadii
-from propagation.attack_path_engine import generateAttackPathReport
+from app.api.propagation.blast_radius_engine import calculateBlastRadius, compareBlastRadii
+from app.api.propagation.attack_path_engine import generateAttackPathReport
 
 FRAME_DELAY_MS = 800
 MITIGATION_FRAME_DELAY_MS = 1200

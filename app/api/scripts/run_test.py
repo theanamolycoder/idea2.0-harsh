@@ -1,9 +1,9 @@
 import sys
 sys.path.insert(0, ".")
 
-from propagation.dependency_mapper import buildDependencyGraph
-from propagation.propagation_engine import runPropagationSimulation
-from mitigation.mitigation_engine import applyMitigationSimulation, selectMitigationsForSeverity
+from app.api.propagation.dependency_mapper import buildDependencyGraph
+from app.api.propagation.propagation_engine import runPropagationSimulation
+from app.api.mitigation.mitigation_engine import applyMitigationSimulation, selectMitigationsForSeverity
 
 print("Building dependency graph...")
 graph = buildDependencyGraph()

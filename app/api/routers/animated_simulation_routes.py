@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 from typing import List, Optional
-from propagation.dependency_mapper import buildDependencyGraph
-from propagation.animation_frame_builder import buildAnimatedSimulationPayload
+from app.api.propagation.dependency_mapper import buildDependencyGraph
+from app.api.propagation.animation_frame_builder import buildAnimatedSimulationPayload
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 import networkx as nx
 import numpy as np
 from typing import Dict, List, Tuple
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getDownstreamDependencies,
     getEdgeWeight,

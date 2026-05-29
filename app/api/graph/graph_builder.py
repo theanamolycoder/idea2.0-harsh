@@ -1,6 +1,6 @@
 import networkx as nx
 from typing import Dict, List
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getNodeCriticality,
     getEdgeWeight,
@@ -8,8 +8,8 @@ from propagation.dependency_mapper import (
     VENDOR_DEPENDENCY_MAP,
     EDGE_WEIGHTS,
 )
-from propagation.propagation_engine import mapScoreToSeverity
-from graph.neo4j_manager import getNeo4jManager
+from app.api.propagation.propagation_engine import mapScoreToSeverity
+from app.api.graph.neo4j_manager import getNeo4jManager
 
 
 def buildInMemoryGraph() -> nx.DiGraph:

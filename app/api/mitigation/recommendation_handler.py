@@ -1,22 +1,22 @@
 from typing import Dict, List
 import networkx as nx
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getNodeCriticality,
     getDownstreamDependencies,
 )
-from propagation.propagation_engine import (
+from app.api.propagation.propagation_engine import (
     mapScoreToSeverity,
     mapSeverityToScore,
 )
-from mitigation.mitigation_engine import (
+from app.api.mitigation.mitigation_engine import (
     selectMitigationsForSeverity,
     getRecommendedMitigations,
     rankMitigationsByImpact,
     calculateMitigationEffectiveness,
     MITIGATION_STRATEGIES,
 )
-from mitigation.resilience_engine import (
+from app.api.mitigation.resilience_engine import (
     calculateVendorResilienceScore,
     getVendorRedundancyScore,
     calculateRecoveryTimeHours,

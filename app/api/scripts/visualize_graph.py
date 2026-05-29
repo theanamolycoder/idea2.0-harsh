@@ -5,9 +5,9 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-from propagation.dependency_mapper import buildDependencyGraph, getNodeCriticality
-from propagation.propagation_engine import runPropagationSimulation, mapScoreToSeverity
-from mitigation.mitigation_engine import applyMitigationSimulation, selectMitigationsForSeverity
+from app.api.propagation.dependency_mapper import buildDependencyGraph, getNodeCriticality
+from app.api.propagation.propagation_engine import runPropagationSimulation, mapScoreToSeverity
+from app.api.mitigation.mitigation_engine import applyMitigationSimulation, selectMitigationsForSeverity
 
 graph = buildDependencyGraph()
 result = runPropagationSimulation("CloudServe", "CRITICAL", graph)

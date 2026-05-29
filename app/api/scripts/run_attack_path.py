@@ -1,9 +1,9 @@
 import sys
 sys.path.insert(0, ".")
 
-from propagation.dependency_mapper import buildDependencyGraph
-from propagation.propagation_engine import runPropagationSimulation
-from propagation.attack_path_engine import generateAttackPathReport, getLateralMovementVectors
+from app.api.propagation.dependency_mapper import buildDependencyGraph
+from app.api.propagation.propagation_engine import runPropagationSimulation
+from app.api.propagation.attack_path_engine import generateAttackPathReport, getLateralMovementVectors
 
 graph = buildDependencyGraph()
 result = runPropagationSimulation("CloudServe", "CRITICAL", graph)

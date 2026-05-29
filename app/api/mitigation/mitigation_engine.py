@@ -1,17 +1,17 @@
 import networkx as nx
 from typing import Dict, List, Tuple
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getNodeCriticality,
     getEdgeWeight,
     getDownstreamDependencies,
 )
-from propagation.propagation_engine import (
+from app.api.propagation.propagation_engine import (
     mapScoreToSeverity,
     mapSeverityToScore,
     propagateRiskScores,
 )
-from propagation.blast_radius_engine import (
+from app.api.propagation.blast_radius_engine import (
     calculateBlastRadius,
     compareBlastRadii,
 )

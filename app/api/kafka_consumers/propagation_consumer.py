@@ -4,24 +4,24 @@ import uuid
 from typing import Dict
 from kafka import KafkaConsumer
 from kafka.errors import KafkaError
-from propagation.dependency_mapper import buildDependencyGraph
-from propagation.propagation_engine import runPropagationSimulation
-from propagation.attack_path_engine import generateAttackPathReport
-from propagation.blast_radius_engine import buildBlastRadiusReport
-from monte_carlo.simulation_engine import runMonteCarloSimulation
-from mitigation.mitigation_engine import (
+from app.api.propagation.dependency_mapper import buildDependencyGraph
+from app.api.propagation.propagation_engine import runPropagationSimulation
+from app.api.propagation.attack_path_engine import generateAttackPathReport
+from app.api.propagation.blast_radius_engine import buildBlastRadiusReport
+from app.api.monte_carlo.simulation_engine import runMonteCarloSimulation
+from app.api.mitigation.mitigation_engine import (
     applyMitigationSimulation,
     selectMitigationsForSeverity,
 )
-from mitigation.recommendation_handler import generateFullRecommendationReport
-from mitigation.resilience_engine import buildResilienceReport
-from graph.neo4j_manager import getNeo4jManager
-from graph.graph_builder import (
+from app.api.mitigation.recommendation_handler import generateFullRecommendationReport
+from app.api.mitigation.resilience_engine import buildResilienceReport
+from app.api.graph.neo4j_manager import getNeo4jManager
+from app.api.graph.graph_builder import (
     syncPropagationResultToNeo4j,
     syncMitigationResultToNeo4j,
     buildGraphDataForDashboard,
 )
-from graph.graph_queries import querySimulationHistory
+from app.api.graph.graph_queries import querySimulationHistory
 
 KAFKA_BOOTSTRAP_SERVERS = "localhost:9092"
 KAFKA_TOPIC_INTELLIGENCE = "normalized-intelligence-events"

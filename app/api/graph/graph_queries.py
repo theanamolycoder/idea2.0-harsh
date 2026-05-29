@@ -1,5 +1,5 @@
 from typing import Dict, List, Optional
-from graph.neo4j_manager import getNeo4jManager
+from app.api.graph.neo4j_manager import getNeo4jManager
 
 
 def queryAllVendors() -> List[Dict]:

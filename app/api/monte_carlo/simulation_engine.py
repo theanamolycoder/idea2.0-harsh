@@ -1,13 +1,13 @@
 import numpy as np
 from typing import Dict, List, Tuple
 import networkx as nx
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getDownstreamDependencies,
     getEdgeWeight,
     getNodeCriticality,
 )
-from propagation.propagation_engine import (
+from app.api.propagation.propagation_engine import (
     mapScoreToSeverity,
     mapSeverityToScore,
 )

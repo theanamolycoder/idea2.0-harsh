@@ -1,11 +1,11 @@
 import networkx as nx
 from typing import Dict, List, Optional
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getEdgeWeight,
     getNodeCriticality,
 )
-from propagation.propagation_engine import mapScoreToSeverity
+from app.api.propagation.propagation_engine import mapScoreToSeverity
 
 
 def generateAttackPath(

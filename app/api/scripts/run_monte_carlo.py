@@ -1,8 +1,8 @@
 import sys
 sys.path.insert(0, ".")
 
-from propagation.dependency_mapper import buildDependencyGraph
-from monte_carlo.simulation_engine import runMonteCarloSimulation
+from app.api.propagation.dependency_mapper import buildDependencyGraph
+from app.api.monte_carlo.simulation_engine import runMonteCarloSimulation
 
 graph = buildDependencyGraph()
 

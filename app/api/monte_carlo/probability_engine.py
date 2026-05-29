@@ -1,11 +1,11 @@
 import numpy as np
 from typing import Dict, List, Tuple
 import networkx as nx
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     getEdgeWeight,
     getNodeCriticality,
 )
-from propagation.propagation_engine import mapScoreToSeverity
+from app.api.propagation.propagation_engine import mapScoreToSeverity
 
 RANDOM_SEED = 42
 DEFAULT_NOISE_STD = 0.05

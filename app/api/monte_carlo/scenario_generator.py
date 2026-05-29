@@ -1,18 +1,18 @@
 import numpy as np
 from typing import Dict, List
 import networkx as nx
-from propagation.dependency_mapper import (
+from app.api.propagation.dependency_mapper import (
     buildDependencyGraph,
     getNodeCriticality,
     getAllNodes,
 )
-from propagation.propagation_engine import (
+from app.api.propagation.propagation_engine import (
     mapSeverityToScore,
     mapScoreToSeverity,
     runPropagationSimulation,
 )
-from monte_carlo.simulation_engine import runMonteCarloSimulation
-from monte_carlo.probability_engine import calculateJointProbability
+from app.api.monte_carlo.simulation_engine import runMonteCarloSimulation
+from app.api.monte_carlo.probability_engine import calculateJointProbability
 
 SCENARIO_SEVERITY_LEVELS = ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
 
