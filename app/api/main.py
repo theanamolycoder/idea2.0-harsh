@@ -46,7 +46,7 @@ from app.api.graph.graph_queries import (
     queryCriticalPathVendors,
 )
 from app.api.kafka_consumers.propagation_consumer import startPropagationConsumerAsync
-from api.animated_simulation_routes import router as animated_router
+from app.api.routers.animated_simulation_routes import router as animated_router
 
 
 
