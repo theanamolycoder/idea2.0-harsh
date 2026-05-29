@@ -1,17 +1,36 @@
-# Environment variables — NEVER commit .env with real secrets
+# Environment variables
 .env
 
 # Python-generated files
 __pycache__/
-*.py[oc]
+*.py[cod]
+*.pyc
 build/
 dist/
 wheels/
 *.egg-info
 
 # Virtual environments
-.venv
+.venv/
+venv/
 
-# Local VS Code overrides (personal settings that should not be shared)
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
 .vscode/settings.local.json
 .vscode/*.local.json
+
+# Cache
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# Next.js
+.next/
+
+# Output folders
+output/
