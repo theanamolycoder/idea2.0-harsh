@@ -340,11 +340,3 @@ async def getResilienceReport(
     propagated_scores = propagation_result.get("propagated_scores", {})
     report = buildResilienceReport(vendor, severity, propagated_scores, graph)
     return report
-### SOUMENS MAIN
-def main():
-    print("Hello from idea!")
-
-
-if __name__ == "__main__":
-    main()
-
